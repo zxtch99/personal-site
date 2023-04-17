@@ -1,12 +1,62 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: My Third Blog Post
-author: Astro Learner
-description: "I had some challenges, but asking in the community really helped!"
+title: Display upcoming and past events with Divi Engine and ACF.
+author: Zach
+description: "This feels like such an important feature for client work as a web developer, so why is it buried in the Divi Engine documentation?"
 image: 
-    url: "https://astro.build/assets/blog/community-day/cover.jpg"
-    alt: "The word community with a heart."
-pubDate: 2022-07-15
-tags: ["astro", "learning in public", "setbacks", "community"]
+    url: "src/assets/blog-post-2.jpg"
+    alt: "Display Upcoming and past events with divi engine and ACF. Wordpress, Divi, Divi Engine, and ACF"
+pubDate: 2023-03-28
+tags: ["learning in public", "setbacks", "community"]
 ---
-It wasn't always smooth sailing, but I'm enjoying building with Astro. And, the [Discord community](https://astro.build/chat) is really friendly and helpful!
+
+This feels like such an important feature for client work as a web developer, so why is it buried in the Divi Engine documentation?
+
+Well, maybe it's not buried, maybe I just wasn't wording my google search right, and I'm a little salty about how long it took me to figure this out.
+
+## The Goal
+
+To ONLY display either upcoming or past events using Divi Engine and ACF.
+
+## What you need
+
+1. Divi theme and builder
+    
+2. Divi Engine plugin
+    
+3. Advanced Custom Field plugin
+    
+
+**Step 1: Use ACF to create a date picker field for your event posts.**
+
+Using ACF, create a new field and choose the "Date Picker" field type.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1680017695505/12ffaa50-9360-4caa-9af2-4ea7b6016dd4.png align="center")
+
+For more information about the date picker, you can check the docs [*<mark>here</mark>*](https://www.advancedcustomfields.com/resources/date-picker/)
+
+**Step 2: Using the Divi Engine archive loop, sort by the date picker field you made in step 1.**
+
+*This blog assumes you already have the posts displaying, so we are going to skip over making a post loop layout and whatnot.*
+
+When you open the archive loop, go to Loop Options &gt; Sorting.
+
+Then in the "Sort Order" dropdown, choose "ACF Date Picker"
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1680019537876/ebf8072c-420c-462c-bf22-0ce49ebe0b27.png align="center")
+
+Once you have that picked, a couple new options should have popped for you, like ACF Date Picker, and ACF Date Picker Method.
+
+**Step 3: Display either Upcoming Events or Past Events**
+
+From here it's pretty straight-forward. In the ACF Date Picker drop-down, you'll choose the field that you made in step 1. (Just a note: you'll need to have something inputed into the fields for each event for this to work)  
+  
+Then for the ACF Date Picker Method, if you want upcoming events, you'll choose "Today and in the future" and for past events choose "In the past". It's also good to take note of some of the other options you have here, they could come handy in the future!
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1680020102512/470687f6-c9cf-4b43-a61f-64e8fa1aaace.png align="center")
+
+After you confirm the changes and hit save, you may need to refresh to see the end result.  
+  
+That's it! If you're interested in a shorter version of this, [*<mark>this</mark>*](https://help.diviengine.com/article/94-how-to-show-past-posts-acf-date-picker) is the article on the Divi Engine docs that helped me with this.
+
+Something I took away after learning this is -- It's pretty beneficial to just click through the modules on Divi Engine or the Divi Engine docs and see what's available. There's a ton of stuff like this that I wish I knew was possible a long time ago.

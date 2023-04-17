@@ -4,11 +4,26 @@ html {
   }
   
   body {
-    margin: 0 auto;
+    margin: 0px;
     width: 100%;
-    max-width: 80ch;
-    padding: 1rem;
+    padding: 0px;
     line-height: 1.5;
+  }
+
+  header,
+  footer {
+    width: 100%;
+  }
+
+  header nav, 
+  footer .footer-container {
+    max-width: 90ch;
+    margin: 0 auto;
+  }
+
+  .content-container {
+    max-width: 80ch;
+    margin: 0 auto;
   }
   
   * {
