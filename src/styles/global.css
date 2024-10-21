@@ -19,6 +19,7 @@ html {
   footer .footer-container {
     max-width: 90ch;
     margin: 0 auto;
+    position: relative;
   }
 
   .content-container {
@@ -80,22 +81,40 @@ background-color: #ff9776;
   .expanded {
     display: unset;
   }
+
+  #themeToggle {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  header nav {
+    padding: 15px;
+  }
   
   @media screen and (min-width: 636px) {
     .nav-links {
-      margin-left: 5em;
       display: block;
       position: static;
       width: auto;
       background: none;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      padding: 10px 0px;
     }
-  
+    .nav-links a:first-of-type {
+      margin-right: auto;
+    }
     .nav-links a {
       display: inline-block;
       padding: 15px 20px;
     }
     .hamburger {
         display: none;
+    }
+    header nav {
+      padding: 0px;
     }
   
   }
@@ -135,7 +154,7 @@ background-color: #ff9776;
    }
    
    svg {
-    width: 100px;
+    width: 30px;
    }
    
    .title-section {
@@ -154,6 +173,12 @@ background-color: #ff9776;
    img {
     object-fit: contain;
     width: 30vw;
+   }
+
+   img.logo {
+    width: 100px;
+    height: 100px;
+    margin-right: auto;
    }
    
    .content-section {
