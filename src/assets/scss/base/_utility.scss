@@ -232,3 +232,14 @@ $font-map: (
     margin-block-start: 0;
   }
 }
+
+.text-gradient {
+  background: linear-gradient(
+    315deg,
+    light-dark(var(--color-primary-300), var(--color-secondary-100)) 25%,
+    light-dark(var(--color-secondary-300), var(--color-primary-200))
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
